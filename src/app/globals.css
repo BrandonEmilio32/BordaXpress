@@ -155,17 +155,17 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 50;
-  backdrop-filter: blur(12px);
-  background: linear-gradient(90deg, rgba(10, 31, 84, 0.88), rgba(10, 31, 84, 0.92));
+  background: #ffffff;
+  border-bottom: 1px solid rgba(17, 24, 39, 0.04);
 }
 
 .bx-nav-logo a {
   font-family: "Barlow Condensed", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #f9fafb;
+  color: #111827;
 }
 
 .bx-nav-links {
@@ -177,14 +177,14 @@ nav {
 .bx-nav-item {
   position: relative;
   font-family: "DM Mono", monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #e5e7eb;
+  color: #4b5563;
 }
 
 .bx-nav-item:hover {
-  color: #ffffff;
+  color: var(--bx-accent);
 }
 
 .bx-nav-dropdown > span {
@@ -229,10 +229,8 @@ nav {
 
 .bx-hero {
   min-height: 100svh;
-  background: radial-gradient(circle at 0% 0%, rgba(10, 31, 84, 0.18), transparent 55%),
-    radial-gradient(circle at 100% 100%, rgba(10, 31, 84, 0.28), transparent 55%),
-    #0b0b11;
-  color: #f9fafb;
+  background: #ffffff;
+  color: #111827;
   display: flex;
   align-items: stretch;
   padding-inline: 3.5rem;
@@ -262,8 +260,7 @@ nav {
   font-size: clamp(2.7rem, 4vw, 3.4rem);
   line-height: 1.05;
   font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .bx-hero-highlight {
@@ -328,36 +325,24 @@ nav {
   border-radius: 1.75rem;
   overflow: hidden;
   min-height: 320px;
-  background: radial-gradient(circle at 10% 0%, rgba(148, 163, 184, 0.5), transparent 60%),
-    radial-gradient(circle at 100% 100%, rgba(15, 23, 42, 0.9), transparent 55%);
+  background: #fef2f2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .bx-hero-media-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, rgba(0, 0, 0, 0.2), rgba(15, 23, 42, 0.85));
-}
-
-.bx-hero-badge {
-  position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
-  padding: 0.4rem 0.8rem;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.85);
-  color: #e5e7eb;
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-family: "DM Mono", monospace;
+  background: radial-gradient(circle at 60% 40%, #ffffff 0, #ffffff 180px, #fef2f2 181px);
 }
 
 .bx-hero-tagline {
   position: absolute;
-  bottom: 1.5rem;
+  top: 1.5rem;
   left: 1.5rem;
-  color: #e5e7eb;
-  font-size: 0.85rem;
+  color: #6b7280;
+  font-size: 0.8rem;
   max-width: 14rem;
 }
 

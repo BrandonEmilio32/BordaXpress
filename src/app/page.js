@@ -61,17 +61,16 @@ export default function Page() {
 
             <Copy animateOnScroll={false} delay={0.3}>
               <h1 className="bx-hero-title">
-                Producción textil
+                Catálogo textil
                 <br />
-                <span className="bx-hero-highlight">rápida y precisa</span>
+                <span className="bx-hero-highlight">moderno y preciso</span>
               </h1>
             </Copy>
 
             <Copy delay={0.6}>
               <p className="bx-hero-subtitle">
-                BordaXpress centraliza tu catálogo, técnicas de personalización y cotizaciones
-                B2B en una sola experiencia web. Pensado para agencias, marcas y equipos de
-                compras que necesitan velocidad y claridad.
+                BordaXpress te ayuda a presentar un catálogo limpio de prendas base con opciones
+                claras de personalización. Una experiencia diseñada para compras B2B exigentes.
               </p>
             </Copy>
 
