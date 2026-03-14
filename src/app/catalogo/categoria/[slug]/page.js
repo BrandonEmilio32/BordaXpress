@@ -1,0 +1,27 @@
+import { supabase } from '@/lib/supabaseClient';
+
+export async function generateStaticParams() {
+  const { data: categories } = await supabase
+    .from('categories')
+    .select('slug')
+    .order('name');
+
+  return (categories || []).map((c) => ({ slug: c.slug }));
+}
+
+export default async function CatalogoCategoriaPage({ params }) {
+  const { slug } = params;
+
+  const { data: category } = await supabase
+    .from('categories')
+    .select('*')
+    .eq('slug', slug)
+    .single();
+
+  return (
+    <main className="page">
+      <h1>Catálogo: {category?.name || 'Categoría'}</h1>
+      <p>Aquí se mostrará el catálogo filtrado por la categoría seleccionada.</p>
+    </main>
+  );
+}
