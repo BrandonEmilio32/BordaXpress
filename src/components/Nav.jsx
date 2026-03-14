@@ -1,29 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { supabase } from "@/lib/supabaseClient";
 
 const Nav = () => {
-  const [services, setServices] = useState([]);
-  const [categories, setCategories] = useState([]);
+  // Modo "vista": navegación estática por ahora, luego se conectará a Supabase
+  const servicios = [
+    { label: "Bordado", href: "/servicios/bordado" },
+    { label: "Serigrafía", href: "/servicios/serigrafia" },
+    { label: "DTF", href: "/servicios/dtf" },
+    { label: "Sublimado", href: "/servicios/sublimado" },
+    { label: "Láser", href: "/servicios/laser" },
+  ];
 
-  useEffect(() => {
-    const fetchNavData = async () => {
-      const [{ data: techniques }, { data: cats }] = await Promise.all([
-        supabase
-          .from("personalization_techniques")
-          .select("name, slug")
-          .order("name"),
-        supabase.from("categories").select("name, slug").order("name"),
-      ]);
-
-      setServices(techniques || []);
-      setCategories(cats || []);
-    };
-
-    fetchNavData();
-  }, []);
+  const categorias = [
+    { label: "Playeras", href: "/catalogo" },
+    { label: "Sudaderas", href: "/catalogo" },
+    { label: "Gorras", href: "/catalogo" },
+    { label: "Termos", href: "/catalogo" },
+  ];
 
   return (
     <nav className="bx-nav">
@@ -34,9 +28,9 @@ const Nav = () => {
         <div className="bx-nav-item bx-nav-dropdown">
           <span>Servicios</span>
           <div className="bx-nav-dropdown-menu">
-            {services.map((s) => (
-              <Link key={s.slug} href={`/servicios/${s.slug}`}>
-                {s.name}
+            {servicios.map((s) => (
+              <Link key={s.href} href={s.href}>
+                {s.label}
               </Link>
             ))}
           </div>
@@ -45,12 +39,9 @@ const Nav = () => {
         <div className="bx-nav-item bx-nav-dropdown">
           <span>Catálogo</span>
           <div className="bx-nav-dropdown-menu">
-            {categories.map((c) => (
-              <Link
-                key={c.slug}
-                href={`/catalogo/categoria/${c.slug}`}
-              >
-                {c.name}
+            {categorias.map((c) => (
+              <Link key={c.label} href={c.href}>
+                {c.label}
               </Link>
             ))}
           </div>
