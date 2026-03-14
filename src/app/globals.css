@@ -380,3 +380,69 @@ nav {
     min-height: 260px;
   }
 }
+
+/* How it works section */
+.bx-how {
+  background: #0b0b11;
+  color: #f9fafb;
+  padding: 4rem 3.5rem 5rem;
+}
+
+.bx-how-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.bx-how-eyebrow {
+  font-family: "DM Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #9ca3af;
+}
+
+.bx-how-title {
+  margin-top: 0.75rem;
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.bx-how-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75rem;
+}
+
+.bx-how-card {
+  padding: 1.5rem 1.4rem;
+  border-radius: 1.1rem;
+  background: radial-gradient(circle at 0% 0%, rgba(148, 163, 184, 0.24), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(15, 23, 42, 0.9), transparent 55%);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.65);
+}
+
+.bx-how-card h3 {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 0.75rem;
+}
+
+.bx-how-card p {
+  font-size: 0.9rem;
+  color: #e5e7eb;
+}
+
+@media (max-width: 900px) {
+  .bx-how {
+    padding-inline: 1.5rem;
+  }
+
+  .bx-how-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
