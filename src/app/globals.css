@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap");
 
 * {
   margin: 0;
@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 :root {
@@ -430,4 +430,55 @@ nav {
   .bx-how-grid {
     grid-template-columns: minmax(0, 1fr);
   }
+}
+
+.bx-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.bx-nav-logo-block {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.bx-nav-logo-main {
+  font-size: 0.9rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #111827;
+}
+
+.bx-nav-logo-sub {
+  font-size: 0.65rem;
+  letter-spacing: 0.4em;
+  text-transform: lowercase;
+  font-weight: 400;
+  color: #9ca3af;
+}
+
+.bx-nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.bx-nav-link {
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: none;
+}
+
+.bx-nav-link-muted {
+  color: #9ca3af;
+}
+
+.bx-nav-link-muted:hover {
+  color: var(--bx-accent);
 }
