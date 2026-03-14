@@ -1,6 +1,8 @@
 import { supabase } from '@/lib/supabaseClient';
 
 export async function generateStaticParams() {
+  if (!supabase) return [];
+
   const { data: techniques } = await supabase
     .from('personalization_techniques')
     .select('slug')
@@ -12,11 +14,16 @@ export async function generateStaticParams() {
 export default async function ServicioPage({ params }) {
   const { slug } = params;
 
-  const { data: technique } = await supabase
-    .from('personalization_techniques')
-    .select('*')
-    .eq('slug', slug)
-    .single();
+  let technique = null;
+
+  if (supabase) {
+    const { data } = await supabase
+      .from('personalization_techniques')
+      .select('*')
+      .eq('slug', slug)
+      .single();
+    technique = data;
+  }
 
   return (
     <main className="page">

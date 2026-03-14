@@ -1,6 +1,8 @@
 import { supabase } from '@/lib/supabaseClient';
 
 export async function generateStaticParams() {
+  if (!supabase) return [];
+
   const { data: categories } = await supabase
     .from('categories')
     .select('slug')
@@ -12,11 +14,16 @@ export async function generateStaticParams() {
 export default async function CatalogoCategoriaPage({ params }) {
   const { slug } = params;
 
-  const { data: category } = await supabase
-    .from('categories')
-    .select('*')
-    .eq('slug', slug)
-    .single();
+  let category = null;
+
+  if (supabase) {
+    const { data } = await supabase
+      .from('categories')
+      .select('*')
+      .eq('slug', slug)
+      .single();
+    category = data;
+  }
 
   return (
     <main className="page">
